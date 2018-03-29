@@ -174,7 +174,7 @@ while True:
     sinceTime = datetime.datetime.fromtimestamp(epoch_timestamp).isoformat()
     querystring = {
       "start":str(1000*ctr),
-      "limit":str((1000*ctr)+999),
+      "limit":"1000",
       "since":sinceTime
     }
     response = requests.request( "GET", tenant["url"] + '/api/v2/audit/auditEvents', data="", headers=headers, params=querystring )
