@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.preformatted {
+  font-family: "Courier New", Courier, monospace, sans-serif;
+  text-align: left;
+  color: #555;
+  /*width: 500px;            */             	/* specify width  */
+  white-space: pre-wrap;                	/* CSS3 browsers  */
+  white-space: -moz-pre-wrap !important; 	/* 1999+ Mozilla  */
+  white-space: -pre-wrap;                	/* Opera 4 thru 6 */
+  white-space: -o-pre-wrap;              	/* Opera 7 and up */
+  word-wrap: break-word;                 	/* IE 5.5+ and up */
+  /* overflow-x: auto; */               	 /* Firefox 2 only */
+  /* width: 99%; */		      			 /* only if needed */
+}
+
+.badge-dark {
+  background-color: #012168; /* SailPoint Blue */
+  color: #ffffff;
+}
+
+.page-header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+  margin-bottom: 25px;
+}
+
+.page-header h1 {
+  position: relative;
+  top: 20px;
+  left: 10px;
+  color: #012168;
+  font-size: 48px;
+  margin-bottom: 25px;
+}
+
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.sailpoint-blue {
+    background-color: #012168; /* SailPoint Blue */
+    color: #ffffff;
+}
+
+.jumbotron {
+    background-color: #1896BB;
+    color: #ffffff;
+}
