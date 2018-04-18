@@ -49,7 +49,24 @@ body {
     color: #ffffff;
 }
 
-.jumbotron {
-    background-color: #1896BB;
+.btn {
+    background-color: #012168; /* SailPoint Blue */
     color: #ffffff;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #20B2DE; /* SailPoint Blue */
+    color: #ffffff;
+}
+
+.jumbotron {
+    background-color: #E4F4F9;
+    border-color: #52A7CF;
+    color: #397EA0;
 }
