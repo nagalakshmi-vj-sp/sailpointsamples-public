@@ -48,6 +48,22 @@ export const config = {
                 value: 'DE'
               }
             ]
+        },
+        {
+            name: "lcs",
+            displayName: "Life Cycle State",
+            tooltip: "Enter the IdentityNow life cycle state for this user.",
+            required: false,
+            type: "list",
+            options: [
+              {
+                label: 'Active',
+                value: 'active'
+              }, {
+                label: 'Inactive',
+                value: 'inactive'
+              }
+            ]
         }
     ]
 };
@@ -65,9 +81,7 @@ export default config;
   - **type** - Can be `string` or `list`.  If this is a `list` then also be sure to include `options` as well.
   - **options** - Used for a `list` of all available options in a drop down menu.
 
-Here is an example of one configured:
-
-![SailPoint](./doc/screen01.png)
+You can modify this `config.js` file to suit your particular requirements.
 
 ## Running
 
@@ -95,19 +109,13 @@ Note that the development build is not optimized.
 To create a production build, use npm run build.
 ~~~
 
-Once this is complete, you can go to the URL, and you should be able to see the login page.
+Once this is complete, you can go to the URL and you should see the Add User page.
 
 ![SailPoint](./doc/screen02.png) 
 
-From here you can fill out the form and submit it:
-
-![SailPoint](./doc/screen03.png) 
-
-If configured correctly, this should show up in IdentityNow as if you aggregated it:
+If configured correctly, once you fill out the form and submit it, the new user should show up in IdentityNow as if you aggregated it from the source:
 
 ![SailPoint](./doc/screen04.png)
-
-Enjoy!
 
 ## Questions / Issues
 
