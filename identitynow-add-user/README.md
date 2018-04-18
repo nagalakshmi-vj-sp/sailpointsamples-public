@@ -111,7 +111,7 @@ To create a production build, use npm run build.
 
 Once this is complete, you can go to the URL and you should see the Add User page.
 
-![SailPoint](./doc/screen02.png) 
+![SailPoint](./doc/add-user.png) 
 
 If configured correctly, once you fill out the form and submit it, the new user should show up in IdentityNow as if you aggregated it from the source:
 
