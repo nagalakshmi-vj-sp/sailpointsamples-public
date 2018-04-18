@@ -1,72 +1,72 @@
 export const config = {
-    source: "62863",
-    title: "IdentityNow Registration",
+    source: "123456",
+    title: "IdentityNow Add User",
     tenant: {
-        name: "neil-test",
-        url: "https://neil-test.identitynow.com",
-        clientId: "MKsZwbEt4L82mY6u",
-        clientSecret: "5XzbTuusVoOGGyubCc6yhlmQLof1Fnru"
+        name: "my-org",
+        url: "https://my-org.identitynow.com",
+        clientId: "the_clientId_string",
+        clientSecret: "the_clientSecret_string"
     },
     formElements: [{
             name: "id",
             displayName: "Unique Identifier",
-            tooltip: "This is the unique identifier of the person.",
+            tooltip: "Enter a unique identifier for the user, such as employee number. This must be unique among all identities.",
             required: true,
             type: "string"
         },
         {
             name: "givenName",
             displayName: "First Name",
-            tooltip: "This is the first or given name of the person.",
+            tooltip: "Enter the person's first or given name.",
             required: true,
             type: "string"
         },
         {
             name: "middleName",
             displayName: "Middle Name",
-            tooltip: "This is the middle name or initial of the person.",
+            tooltip: "Enter the person's middle name or initial.",
             required: false,
             type: "string"
         },
         {
             name: "familyName",
             displayName: "Last Name",
-            tooltip: "This is the last or family name of the person.",
+            tooltip: "Enter the person's last or family name.",
             required: true,
             type: "string"
         },
         {
             name: "displayName",
             displayName: "Display Name",
-            tooltip: "This is the display name of the person.  Usually first and last.",
+            tooltip: "Enter a display name of the person. Usually First Last or First.Last.",
             required: false,
             type: "string"
         },
         {
             name: "email",
             displayName: "Email Address",
-            tooltip: "This is the contact email address of the person.",
+            tooltip: "Enter the person's primary email address.",
             required: false,
             type: "string"
         },
         {
             name: "phoneNumber",
             displayName: "Phone Number",
-            tooltip: "This is the person's contact phone number.",
+            tooltip: "Enter the person's primary phone number.",
             required: false,
             type: "string"
         },
         {
             name: "location",
             displayName: "Location",
-            tooltip: "This is the location of the person.",
+            tooltip: "Enter the person's location.",
             required: false,
             type: "string"
         },
         {
             name: "country",
             displayName: "Country",
-            tooltip: "This is the person's country.",
+            tooltip: "Enter the person's country.",
             required: false,
             type: "list",
             options: [
@@ -79,6 +79,22 @@ export const config = {
               },{
                 label: 'Germany',
                 value: 'DE'
+              }
+            ]
+        },
+        {
+            name: "lcs",
+            displayName: "Life Cycle State",
+            tooltip: "Enter the IdentityNow life cycle state for this user.",
+            required: false,
+            type: "list",
+            options: [
+              {
+                label: 'Active',
+                value: 'active'
+              }, {
+                label: 'Inactive',
+                value: 'inactive'
               }
             ]
         }
