@@ -1,12 +1,12 @@
 ![SailPoint](https://files.accessiq.sailpoint.com/modules/builds/static-assets/perpetual/sailpoint/logo/1.0/sailpoint_logo_color_228x50.png)
 
-# IdentityNow Registration
+# IdentityNow Add User Utility
 
 Author: [Neil McGlennon](mailto:neil.mcglennon@sailpoint.com)
 
 ## Overview
 
-This is a simple IdentityNow registration page written in [Node.js](https://nodejs.org/en/), [React](), and [Bootstrap]().  The purpose of this is to have an example form which can create identities into IdentityNow via REST APIs.  While this isn't intended for actual Production usage, it can be used as a basis for registration pages.
+This is a simple IdentityNow add user app written in [Node.js](https://nodejs.org/en/), [React](), and [Bootstrap](). The purpose of this is to have a means to add users to IdentityNow via REST APIs. While this isn't a full-featured application, it can be used as an example of how to develop such an app.
 
 ## Configuration
 
@@ -15,7 +15,7 @@ Overall the configuration for this is fairly easy, and contained in a single `co
 ~~~
 export const config = {
     source: "62863",
-    title: "IdentityNow Registration",
+    title: "IdentityNow Add User",
     tenant: {
         name: "neil-test",
         url: "https://neil-test.identitynow.com",
@@ -73,7 +73,7 @@ Here is an example of one configured:
 
 In order to run this, make sure you have [Node.js](https://nodejs.org/en/) installed.
 
-From the `identitynow-registration` folder, run:
+From the `identitynow-user-add` folder, run:
 
 ~~~
 $ npm start
@@ -82,7 +82,7 @@ $ npm start
 Once this runs, you should see a startup that looks something like this:
 
 ~~~
-> identitynow-registration@1.0.0 start /Users/neil.mcglennon/Documents/Workspace/identitynow-services-tools/identitynow-registration
+> identitynow-user-add@1.0.0 start /Users/neil.mcglennon/Documents/Workspace/identitynow-services-tools/identitynow-user-add
 > react-scripts start
 Compiled successfully!
 
