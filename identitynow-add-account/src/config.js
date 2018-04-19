@@ -16,7 +16,7 @@
 // you must edit the config constant below with your org's data and preferred form fields.
 export const config = {
     source: "123456",
-    title: "IdentityNow Add User",
+    title: "IdentityNow Add Account",
     tenant: {
         name: "my-org",
         url: "https://my-org.identitynow.com",
