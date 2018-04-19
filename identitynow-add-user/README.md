@@ -1,12 +1,16 @@
 ![SailPoint](https://files.accessiq.sailpoint.com/modules/builds/static-assets/perpetual/sailpoint/logo/1.0/sailpoint_logo_color_228x50.png)
 
-# IdentityNow Add User Utility
+# IdentityNow - Accelerator for manual provisioning initiation
 
 Author: [Neil McGlennon](mailto:neil.mcglennon@sailpoint.com)
 
 ## Overview
 
-This is a simple IdentityNow add user app written in [Node.js](https://nodejs.org/en/), [React](), and [Bootstrap](). The purpose of this is to have a means to add users to IdentityNow via REST APIs. While this isn't a full-featured application, it can be used as an example of how to develop such an app.
+This is a simple IdentityNow app written in [Node.js](https://nodejs.org/en/), [React](), and [Bootstrap](). The purpose of this is to have a means to initiate provisioning of users to IdentityNow via REST APIs. While this isn't a full-featured application, it can be used as an example of how to develop such an app or integrate this functionality into a third party system.
+
+## Caveats and Considerations
+
+The accepted process flow for identities to be added into IdentityNow is for them to first have an account on an authoritative source, and then upon aggregation of that authoritative source (flat file, direct connect, etc.), the identity is created and any provisioning is done according to policies configured in IdentityNow via identity profiles, roles, and access profiles. The method of provisioning initiation that is used in this accelerator shortcuts the process of aggregation by adding user accounts to a source directly via API prior to aggregation of the source. However, IdentityNow is not the master of these accounts, and it is expected that the users who are added via the API will be eventually added to the source through ordinary means and aggregated into IdentityNow. For the purposes of this exercise, users added via API should be considered temporary.
 
 ## Configuration
 
@@ -17,8 +21,8 @@ export const config = {
     source: "62863",
     title: "IdentityNow Add User",
     tenant: {
-        name: "neil-test",
-        url: "https://neil-test.identitynow.com",
+        name: "my-org",
+        url: "https://my-org.identitynow.com",
         clientId: "MKs...Y6u",
         clientSecret: "5Xz...nru"
     },
@@ -100,7 +104,7 @@ Once this runs, you should see a startup that looks something like this:
 > react-scripts start
 Compiled successfully!
 
-You can now view identitynow-registration in the browser.
+You can now view the app in the browser.
 
   Local:            http://localhost:3000/
   On Your Network:  http://172.16.52.46:3000/
@@ -117,8 +121,8 @@ If configured correctly, once you fill out the form and submit it, the new user 
 
 ![SailPoint](./doc/screen04.png)
 
+Note that an identity cube will be created for this user if the source used is the authoritative source configured in an identity profile. Any additional provisioning actions will result according to IdentityNow configuration. However, if the source is later aggregated and the users who were added via API are not present in the flat file account feed for the source, then their account will be removed from the source in IdentityNow. This may result in uncorrelated accounts and removal of the idenitity cube.
+
 ## Questions / Issues
 
 If you have any questions, feel free to contact [Neil McGlennon](mailto:neil.mcglennon@sailpoint.com). 
-
-
