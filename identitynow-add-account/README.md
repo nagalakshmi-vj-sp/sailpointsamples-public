@@ -10,7 +10,7 @@ This is a simple IdentityNow app written in [Node.js](https://nodejs.org/en/), [
 
 ## Caveats and Considerations
 
-The accepted process flow for identities to be added into IdentityNow is for them to first have an account on an authoritative source, and then upon aggregation of that authoritative source (flat file, direct connect, etc.), the identity is created and any provisioning is done according to policies configured in IdentityNow via identity profiles, roles, and access profiles. The method of provisioning initiation that is used in this accelerator shortcuts the process of aggregation by adding user accounts to a source directly via API prior to aggregation of the source. However, IdentityNow is not the master of these accounts, and it is expected that the users who are added via the API will be eventually added to the source through ordinary means and aggregated into IdentityNow. For the purposes of this exercise, users added via API should be considered temporary.
+The accepted process flow for identities to be added into IdentityNow is for them to first have an account on an authoritative source, and then upon aggregation of that authoritative source (flat file, direct connect, etc.), the identity is created and any provisioning is done according to policies configured in IdentityNow via identity profiles, roles, and access profiles. The method of provisioning initiation that is used in this accelerator shortcuts the process of aggregation by adding user accounts to a source directly via API prior to aggregation of the source. However, IdentityNow is not the master of these accounts, and is not the system of record. It is expected that the users who are added via the API will be eventually added to the source through ordinary means and aggregated into IdentityNow. For the purposes of this exercise, users added via API should be considered temporary.
 
 ## Configuration
 
@@ -19,7 +19,7 @@ Overall the configuration for this is fairly easy, and contained in a single `co
 ~~~
 export const config = {
     source: "62863",
-    title: "IdentityNow Add User",
+    title: "IdentityNow Add Account",
     tenant: {
         name: "my-org",
         url: "https://my-org.identitynow.com",
