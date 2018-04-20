@@ -6,7 +6,9 @@ Author: [Neil McGlennon](mailto:neil.mcglennon@sailpoint.com)
 
 ## Overview
 
-This is a simple IdentityNow app written in [Node.js](https://nodejs.org/en/), [React](), and [Bootstrap](). The purpose of this is to have a means to initiate provisioning of users to IdentityNow via REST APIs. While this isn't a full-featured application, it can be used as an example of how to develop such an app or integrate this functionality into a third party system.
+This is a simple IdentityNow app written in [Node.js](https://nodejs.org/en/), [React](), and [Bootstrap](). The purpose of this is to have a means to initiate provisioning of users to IdentityNow via REST APIs. While this isn't a full-featured application, it can be used as an example of how to develop such an app or integrate this functionality into a third party system. 
+
+Note: this app will only ADD accounts into IdentityNow but has no other account management, and is intended to demonstrate how to use our platform API for adding accounts. It does not change, edit, delete, or otherwise manage accounts, and no support is included or implied.
 
 ## Caveats and Considerations
 
