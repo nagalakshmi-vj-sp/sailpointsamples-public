@@ -1,4 +1,4 @@
-name: "truffle hog scan 2"
+name: "trufflehog scan 2"
 
 on:  
   pull_request:
