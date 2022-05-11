@@ -1,31 +1,24 @@
-secret-scanning:
+name: "truffle hog scan 2"
 
-name: secret-scanning
+on:  
+  pull_request:
+    branches: [ master ]
 
-runs-on: ubuntu-latest
+jobs:
 
-steps:
+  secret-scanning:
+    name: secret-scanning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-- name: Checkout
+      - name: Scan secrets
+        run: docker run --rm -v $(pwd):/src hysnsec/trufflehog file:///src --json > trufflehog-output.json
 
-uses: actions/checkout@v2
-
-
-
-- name: Scan secrets
-
-run: docker run --rm -v $(pwd):/src hysnsec/trufflehog file:///src --json > trufflehog-output.json
-
-
-
-- name: Upload Secrets Artifacts
-
-uses: actions/upload-artifact@v2
-
-with:
-
-name: Trufflehog
-
-path: trufflehog-output.json
-
-if: always()
+      - name: Upload Secrets Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Trufflehog
+          path: trufflehog-output.json
+        if: always()
