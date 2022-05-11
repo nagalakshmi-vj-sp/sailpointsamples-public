@@ -1,0 +1,31 @@
+secret-scanning:
+
+name: secret-scanning
+
+runs-on: ubuntu-latest
+
+steps:
+
+- name: Checkout
+
+uses: actions/checkout@v2
+
+
+
+- name: Scan secrets
+
+run: docker run --rm -v $(pwd):/src hysnsec/trufflehog file:///src --json > trufflehog-output.json
+
+
+
+- name: Upload Secrets Artifacts
+
+uses: actions/upload-artifact@v2
+
+with:
+
+name: Trufflehog
+
+path: trufflehog-output.json
+
+if: always()
