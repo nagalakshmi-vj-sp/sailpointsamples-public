@@ -1,7 +1,7 @@
 name: "trufflehog scan 2"
 
 on:  
-  pull_request:
+  push:
     branches: [ master ]
 
 jobs:
