@@ -1,0 +1,35 @@
+on:
+  # Trigger analysis when pushing to main or an existing pull requests.  Also trigger on
+  # new pull requests
+  push:
+    branches:
+      - main
+  pull_request:
+      types: [opened, synchronize, reopened]
+name: Contrast Workflow
+jobs:
+  build_and_scan:
+    runs-on: ubuntu-latest
+    # check out project
+    steps:
+    - uses: actions/checkout@v2
+    # steps to build the artifact you want to scan
+    # -name: Build Project
+    # ...
+    # Scan Artifact    
+    - name: Contrast Scan Action
+      uses: Contrast-Security-OSS/contrastscan-action@v2
+      with:
+          artifact: mypath/target/myartifact.jar
+          apiKey: UeBSMQulXhF9l5wUBpZ2I1oRSoH4iu3B
+          orgId: 9b27f4fe-2975-430d-a4f1-542c1a625d13
+          authHeader: TmFnYWxha3NobWkudmpAc2FpbHBvaW50LmNvbTpFUkJRMDVXMkVaOTM0VzY5
+    #Upload the results to Github      
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+        sarif_file: results.sari
+    - name: Upload SARIF file
+      uses: github/codeql-action/upload-sarif@v2
+      with:
+          sarif_file: results.sarif
