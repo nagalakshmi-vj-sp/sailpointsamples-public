@@ -2,8 +2,7 @@ on:
   # Trigger analysis when pushing to main or an existing pull requests.  Also trigger on
   # new pull requests
   push:
-    branches:
-      - main
+    branches: [ master ]
   pull_request:
       types: [opened, synchronize, reopened]
 name: Contrast Workflow
